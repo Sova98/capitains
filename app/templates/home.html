@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row" style="background-color: #F9F8F3; border-radius: 10px;">
+
+	<div class="col-sm-2" style="padding-left: 0;">
+		<ul class="nav flex-column" style="background-color: #F2F0EA; height: 100%">
+		  <li class="nav-item">
+		    <button type="button" onclick="setActivebtn('karate')" id="karate" class="btn optionListBtn">Карате</button>
+		  </li>
+		  <li class="nav-item">
+		    <button type="button" onclick="setActivebtn('school')" id="school" class="btn optionListBtn">Учеба</button>
+		  </li>
+		  <li class="nav-item">
+		    <button type="button" onclick="setActivebtn('capActivity')" id="capActivity" class="btn optionListBtn">Капитанская<br>деятельность</button>
+		  </li>
+		  <li class="nav-item">
+		    <button type="button" onclick="setActivebtn('activity')" id="activity" class="btn optionListBtn">Активность</button>
+		  </li>
+		</ul>
+	</div>
+
+
+	<div class="col-sm-10">
+		<h3 style="margin-top: 30px">Задания на сегодня:</h3>
+
+		<ul class="nav flex-column">
+
+		</ul>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/tasks.js') }}"></script>
+{% endblock %}

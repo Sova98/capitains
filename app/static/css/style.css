@@ -1,0 +1,49 @@
+body{
+	background-image: url("../background2.jpg");
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+.optionListBtn{
+	width: 100%;
+	text-align: center;
+	height: 100px;
+	border-radius: 0!important;
+}
+li{
+	margin-bottom: 5px;
+}
+.task{
+	background-color: white!important;
+	box-shadow: 1px 1px 1px lightgrey;
+	color: grey;
+	padding: 10px;
+	border-radius: 5px;
+	border:solid 2px;
+	border-color: lightblue;
+
+}
+.optionListBtn{
+	background-color: #eae8e2!important;
+	color: grey;
+}
+.btn{
+outline: none;
+box-shadow:none !important;
+border:none !important;
+}
+.navbar{
+	padding-left: 0!important;
+}
+.loginDiv, .registerDiv{
+	display: inline-block!important;
+	border-radius: 5px;
+	background-color: white;
+	margin: 30px;
+	padding: 20px;
+	color: grey;
+}
+.dropdown:hover > .dropdown-menu { 
+    display: block; 
+}
