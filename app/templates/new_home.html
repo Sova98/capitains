@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style_new_home.css') }}">
+</head>
+<body>
+	{% include 'includes/_navbar.html'%}
+	{% include 'includes/_navbar2.html' %}
+	<div class="content">
+			<div class="news_bar">
+				<div class="last_awards">
+					<h4>Последние награды</h4>
+				</div>
+				<div class="top_block">
+					<h4>ТОП-5</h4>
+				</div>
+			</div>
+	</div>
+<footer>
+	<p></p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/new_home.js') }}"></script>
+
+
+</body>
+</html>

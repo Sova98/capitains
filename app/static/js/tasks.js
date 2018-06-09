@@ -37,20 +37,3 @@ function getTasks(type){
 		alert('something went wrong')
 	});
 }
-/*			{% for t in tasks %}
-			  <li class="nav-item">
-			    <div class="task">
-			    	<h3>{{t.title}}</h3>
-			    	<hr />
-			    	<p>{{t.container}}</p>
-			    	<div class="row">
-						<div class="col-sm-6" style="text-align: left;">
-							<button type="button" class="btn btn-success">ВЫПОЛНИЛ</button>
-						</div>
-
-						<div class="col-sm-6" style="text-align: right;">
-							<span>уже выполнили 15 чел</span>
-					</div>
-			    </div>
-			  </li>
-		  	{% endfor %}*/

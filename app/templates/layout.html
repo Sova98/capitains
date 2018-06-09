@@ -2,15 +2,15 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>MyFlask</title>
+	<title>Капитаны</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<body style="background-color: #97D7E1;">
-	<div class="container">
-		{% include 'includes/_navbar.html' %}
+<body">
+	{% include 'includes/_navbar.html' %}
+	<div class="my_container">
 		{% block body %}{% endblock %}
 	</div>
 	

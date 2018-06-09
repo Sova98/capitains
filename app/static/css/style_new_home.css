@@ -1,0 +1,74 @@
+.navbar .navbar-nav > li > a:hover,.navbar .navbar-nav > li > a:active, .navbar .navbar-nav > li > a:focus {
+    background-color: lightgrey;
+}
+body{
+	color: grey;
+}
+.uppernav{
+	padding-top: 0;
+	padding-bottom: 0;
+	border-bottom: solid 1px grey;
+}
+.navbarbot{
+	padding-top: 0;
+	padding-bottom: 0;
+	border-bottom: solid 1px grey;
+
+}
+.collapsebot{
+	margin-top: 0!important;
+	margin: 0;
+}
+.content{
+	margin: 10!important;
+	padding-left: 50px!important;
+	padding-right: 50px!important;
+	padding-top: 5px;
+	overflow: hidden;
+	text-align: center;
+}
+.new_award{
+	width: 200px;
+	height: 300px;
+	border-radius: 5px;
+	display: inline-block;
+	border: solid 1px grey;
+	text-align: center;
+	vertical-align: middle;
+	margin: 15px;
+	padding: 5px;
+}
+
+.awards_block{
+	display: inline-block;
+	width: calc(100% - 250px);
+	float: left;
+	border-radius: 5px;
+	border: solid 1px grey;
+	padding: 5px;
+}
+.top_block, .last_awards{
+	width: 200px;
+	height: 300px;
+	border-radius: 5px;
+	border: solid 1px grey;
+	text-align: center;
+}
+.news_bar{
+	display: inline-block;
+	width: 200px;
+	border-radius: 5px;
+	border: solid 1px grey;
+	float: right;
+	text-align: center;
+}
+.btn{
+outline: none;
+box-shadow:none !important;
+border:none !important;
+border-radius: 0;
+color: grey;
+}
+.active{
+	background-color: darkgrey!important;
+}

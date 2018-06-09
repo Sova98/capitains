@@ -15,10 +15,11 @@ from flask import jsonify
 @app.route('/tasks')
 @login_required
 def index():
-	tasks = Task.query.all()
-	return render_template('home.html',tasks=tasks)
+	return render_template('new_home.html')
+
 
 @app.route('/profile')
+@login_required
 def profile():
 	return render_template('profile.html')
 
@@ -50,9 +51,11 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
-        return redirect(url_for('profile'))
+        return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
+
+@login_required
 @app.route('/logout')
 def logout():
     logout_user()
@@ -62,4 +65,12 @@ def logout():
 @login_required
 def gettasks():
 	return jsonify(getTasks(request.form['type']))
+@login_required
+@app.route('/rating')
+def rating():
+	return render_template('rating.html')
 
+@login_required
+@app.route('/tournament')
+def tournament():
+	return render_template('tournament.html')

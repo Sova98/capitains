@@ -1,40 +1,47 @@
-body{
-	background-image: url("../background2.jpg");
-	background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: bottom;
-    background-attachment: fixed;
+.navbar .navbar-nav > li > a:hover,.navbar .navbar-nav > li > a:active, .navbar .navbar-nav > li > a:focus {
+    background-color: lightgrey;
 }
-.optionListBtn{
-	width: 100%;
-	text-align: center;
-	height: 100px;
-	border-radius: 0!important;
+.uppernav{
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+	border-bottom: solid 1px grey;
 }
-li{
-	margin-bottom: 5px;
+.active{
+	background-color: darkgrey!important;
 }
-.task{
-	background-color: white!important;
-	box-shadow: 1px 1px 1px lightgrey;
-	color: grey;
-	padding: 10px;
-	border-radius: 5px;
-	border:solid 2px;
-	border-color: lightblue;
 
-}
-.optionListBtn{
-	background-color: #eae8e2!important;
-	color: grey;
+.content{
+	margin-top: 5px;
+	margin: 10!important;
+	padding-left: 50px!important;
+	padding-right: 50px!important;
+	padding-top: 5px;
+	overflow: hidden;
 }
 .btn{
 outline: none;
 box-shadow:none !important;
 border:none !important;
 }
-.navbar{
-	padding-left: 0!important;
+.user_block{
+	float: left;
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	width: 300px;
+	border-radius: 5px;
+	border: solid 1px grey;
+}
+.achieves_block{
+	float:right;
+	padding-top: 0;
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	width: calc(100% - 350px);
+	border-radius: 5px;
+	border: solid 1px grey;
+	min-height: 500px;
 }
 .loginDiv, .registerDiv{
 	display: inline-block!important;
@@ -43,7 +50,5 @@ border:none !important;
 	margin: 30px;
 	padding: 20px;
 	color: grey;
-}
-.dropdown:hover > .dropdown-menu { 
-    display: block; 
+	border: solid 1px;
 }
