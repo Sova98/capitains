@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, FileField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
+from wtforms.widgets import TextArea
 from app.models import User
 
 class LoginForm(FlaskForm):
@@ -26,3 +27,8 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email address.')
+
+class SendRequestForm(FlaskForm):
+    message = StringField("message", widget=TextArea(), id='messageInput',validators=[DataRequired()])
+    file = FileField()
+    submit = SubmitField("submit", id='submitMessRequest')

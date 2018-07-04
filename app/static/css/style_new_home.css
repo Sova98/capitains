@@ -28,6 +28,7 @@ body{
 	text-align: center;
 }
 .new_award{
+	cursor: pointer;
 	width: 200px;
 	height: 300px;
 	border-radius: 5px;
@@ -41,7 +42,8 @@ body{
 
 .awards_block{
 	display: inline-block;
-	width: calc(100% - 250px);
+	width: 100%;
+	min-width: 250px;
 	float: left;
 	border-radius: 5px;
 	border: solid 1px grey;
@@ -63,11 +65,11 @@ body{
 	text-align: center;
 }
 .btn{
-outline: none;
-box-shadow:none !important;
-border:none !important;
-border-radius: 0;
-color: grey;
+	outline: none;
+	box-shadow:none !important;
+	border:none !important;
+	border-radius: 0;
+	color: grey;
 }
 .active{
 	background-color: darkgrey!important;
@@ -139,5 +141,48 @@ color: grey;
 	float:left;
 	display: inline-block;
 	background-color: white;
+
+}
+.sendMessageBox{
+	display: none;
+	position: fixed;
+	width: 600px;
+	height: 500px;
+	top: 0; left: 0; bottom: 0; right: 0;
+	float: top;
+	margin: auto;
+	z-index: 10;
+	padding: 10px;
+	background-color: white;
+}
+.sendHeadDiv{
+	width: 100%;
+	height: 100px;
+	text-align: center;	
+}
+.sendEditableDiv{
+	width: 100%;
+	height: calc(100% - 200px);
+	border: solid 1px lightgrey;
+}
+.sendBottom{
+	width: 100%;
+	height: 100px;
+}
+
+#messageInput{
+	width: 100%;
+	height: 100%;
+}
+#submitMessRequest{
+	float: right;
+}
+@media screen and (max-width: 479px) {
+	.news_bar{
+		display: none;
+	}
+	.awards_block{
+		width: 100%;
+	}
 
 }

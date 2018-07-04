@@ -30,7 +30,7 @@ $(".content").on("click", 'div.new_award', function(){
 	var h4 = document.createElement('H4');
 	var btn = document.createElement('button');
 	var div_btn = document.createElement('div');
-	var ul = document.createElement('ul')
+	var ul = document.createElement('ul');
 	ul.className = 'list-group'
 	div_btn.className = 'div_btn';
 	btn.innerHTML = 'получить';
@@ -63,9 +63,17 @@ $(".content").on("click", 'div.new_award', function(){
 });
 
 
-$(".outPopUp").on("click", "div.closeDiv", function(){
+$(".outPopUp").on("click", ".closeDiv", function(){
     $('.award_detail_container').remove();
     $('.mask').remove();
+});
+
+$(".killBtn").on("click", function(){
+    $('.sendMessageBox').css("display", "none");
+});
+
+$(".outPopUp").on("click",".btn_getAward", function(){
+	$(".sendMessageBox").css("display", "inline-block");
 });
 
 function getTasks(type){
@@ -79,20 +87,10 @@ function getTasks(type){
 		for(var i = 1; i < parseInt(resp[0]); i++){
 			var title = document.createTextNode(resp[i]['title']);
 			var h4 = document.createElement('H4');
-			var btn = document.createElement('button');
-			var div_btn = document.createElement('div');
-			var ul = document.createElement('ul')
-			ul.className = 'list-group'
-			div_btn.className = 'div_btn';
-			btn.innerHTML = 'получить';
-			btn.className = 'btn_getAward';
-			div_btn.appendChild(btn);			
 			h4.appendChild(title);
 			var div = document.createElement('DIV');
 			div.className = 'new_award';  
 			div.appendChild(h4);
-			div.appendChild(ul);
-			div.appendChild(div_btn);
 			awards_block.appendChild(div); 
 		}
 		$('.content').prepend(awards_block); 

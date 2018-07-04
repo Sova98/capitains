@@ -6,16 +6,17 @@ from flask_login import logout_user
 from flask_login import login_required
 from app.models import User, Task
 from app import db
-from app.forms import RegistrationForm
+from app.forms import RegistrationForm, SendRequestForm
 from werkzeug.urls import url_parse
 from app.tasksSpecified import getTasks
 from flask import jsonify
 
-@app.route('/')
-@app.route('/tasks')
+@app.route('/', methods=['POST'])
+@app.route('/tasks', methods=['POST'])
 @login_required
 def index():
-	return render_template('new_home.html')
+	form = SendRequestForm()
+	return render_template('new_home.html', form=form)
 
 
 @app.route('/profile')
@@ -74,3 +75,7 @@ def rating():
 @app.route('/tournament')
 def tournament():
 	return render_template('tournament.html')
+
+@app.route('/godspanel')
+def panel():
+	return render_template('godspanel.html')
