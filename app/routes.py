@@ -11,8 +11,8 @@ from werkzeug.urls import url_parse
 from app.tasksSpecified import getTasks
 from flask import jsonify
 
-@app.route('/', methods=['POST'])
-@app.route('/tasks', methods=['POST'])
+@app.route('/', methods=['POST'], 'GET')
+@app.route('/tasks', methods=['POST', 'GET'])
 @login_required
 def index():
 	form = SendRequestForm()
