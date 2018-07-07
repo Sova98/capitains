@@ -1,17 +1,21 @@
 from app import app
-from flask import Flask, render_template, flash, redirect, url_for, request
+from flask import Flask, render_template, flash, redirect, url_for, request, send_from_directory
 from app.forms import LoginForm
 from flask_login import current_user, login_user
 from flask_login import logout_user
 from flask_login import login_required
-from app.models import User, Task
+from app.models import User, Task, AwardRequest
 from app import db
 from app.forms import RegistrationForm, SendRequestForm
 from werkzeug.urls import url_parse
+from werkzeug.utils import secure_filename
 from app.tasksSpecified import getTasks
 from flask import jsonify
+from flask_uploads import UploadSet, configure_uploads, IMAGES
+import os
 
-@app.route('/', methods=['POST'], 'GET')
+
+@app.route('/', methods=['POST', 'GET'])
 @app.route('/tasks', methods=['POST', 'GET'])
 @login_required
 def index():
@@ -78,4 +82,33 @@ def tournament():
 
 @app.route('/godspanel')
 def panel():
-	return render_template('godspanel.html')
+	requests = AwardRequest.query.all()
+	awards = Task.query.all()
+	return render_template('godspanel.html', requests=requests, awards=awards)
+
+#upload photos/videos
+
+@app.route('/upload', methods=['POST', 'GET'])
+def upload():
+	if request.method == 'POST':
+		required_award = request.form.get('award_title')
+		files = request.files.getlist("file")
+		files_names = ''
+		for f in files:
+			filename = secure_filename(f.filename)
+			files_names += filename + '/'
+			f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+		files_names = files_names[0:-1]
+		award_request = AwardRequest(
+			message=request.form.get('message'),
+			user_id=current_user.id,
+			file_name=files_names,
+			required_award=required_award)
+		db.session.add(award_request)
+		db.session.commit()
+		return redirect(url_for('index'))
+	return redirect(url_for('index'))
+
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory('static/img', filename)

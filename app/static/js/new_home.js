@@ -69,10 +69,20 @@ $(".outPopUp").on("click", ".closeDiv", function(){
 });
 
 $(".killBtn").on("click", function(){
+	$(".sendHeadDiv").children().eq(1).remove();
     $('.sendMessageBox').css("display", "none");
 });
 
 $(".outPopUp").on("click",".btn_getAward", function(){
+	var text = document.createTextNode("Получить " + $(".award_detail").children().first().text());
+	var p = document.createElement('p');
+	p.appendChild(text);
+	$('<input>').attr({
+	    type: 'hidden',
+	    name: 'award_title',
+	    value : $(".award_detail").children().first().text()
+		}).appendTo('#requestAwardForm');
+	$(".sendHeadDiv").append(p);
 	$(".sendMessageBox").css("display", "inline-block");
 });
 

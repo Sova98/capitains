@@ -1,17 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<div class="container">
-	<ul>
-		<li>
-			<div class="mail">
-				<p>бла бла бла</p>
-			</div>
-		</li>
-	</ul>
-</div>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block body %}
+<ul class="list-group">
+{% for request in requests %}
+<li class="list-group-item">
+	<div>
+		<p> {{request.message}} </p>
+		{% set names = request.file_name.split('/') %}
+		
+		{% for name in names %}
+			<img src='/static/img/{{name}}' height='200px'>
+		{% endfor %}
+
+		<p>Требует: {{request.required_award}}</p>
+
+		<p>Для получения необходимо:</p>
+		{% for award in awards %}
+			{% if request.required_award == award.title %}
+				{% set steps =  award.container.split('/') %}
+				{% for step in steps%}
+					<p>{{step}}</p>
+				{% endfor %}
+				
+			{% endif %}
+		{% endfor %}
+		<button class='btn btn-success'>Одобрить</button>
+		<button class='btn btn-danger' >Отклонить</button>
+	</div>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

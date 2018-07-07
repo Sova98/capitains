@@ -1,17 +1,11 @@
 <div class="sendMessageBox">
 	<div class="sendHeadDiv">
 		<button class="killBtn" style="float: right">х</button>
-		<p>Отправить заявку</p>
 	</div>
-	
-	<div class="sendEditableDiv">
+	<form type="file" method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}" id='requestAwardForm'>
+		{{ form.hidden_tag() }}
 		{{ form.message() }}
-	</div>
-	<div class="sendBottom">
-		<form action="" method="POST">
-			{{ form.hidden_tag() }}
-			{{ form.file() }}
-			{{ form.submit() }}
-		</form>
-	</div>
+		{{ form.file(multiple='')}}
+		{{ form.submit() }}
+	</form>
 </div>

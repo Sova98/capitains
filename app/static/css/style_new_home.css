@@ -163,7 +163,6 @@ body{
 .sendEditableDiv{
 	width: 100%;
 	height: calc(100% - 200px);
-	border: solid 1px lightgrey;
 }
 .sendBottom{
 	width: 100%;
@@ -172,11 +171,12 @@ body{
 
 #messageInput{
 	width: 100%;
-	height: 100%;
+	height: 300px;
 }
 #submitMessRequest{
 	float: right;
 }
+
 @media screen and (max-width: 479px) {
 	.news_bar{
 		display: none;

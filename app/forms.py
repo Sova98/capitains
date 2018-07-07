@@ -30,5 +30,5 @@ class RegistrationForm(FlaskForm):
 
 class SendRequestForm(FlaskForm):
     message = StringField("message", widget=TextArea(), id='messageInput',validators=[DataRequired()])
-    file = FileField()
+    file = FileField("file")
     submit = SubmitField("submit", id='submitMessRequest')
